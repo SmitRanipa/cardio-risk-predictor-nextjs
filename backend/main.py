@@ -22,6 +22,10 @@ app.add_middleware(
 def root():
     return {"status": "Cardio API is running"}
 
+@app.get("/healthz")
+def healthz():
+    return {"status": "healthy"}
+
 @app.post("/predict", response_model=PredictionResponse)
 def predict_api(data: PatientInput):
     try:
