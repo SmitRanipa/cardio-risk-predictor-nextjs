@@ -2,10 +2,12 @@ import joblib
 import pandas as pd
 import os
 
-MODEL_PATH = "cardio_model.pkl"
+# ✅ Use absolute path to ensure it works in production
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "cardio_model.pkl")
 
 if not os.path.exists(MODEL_PATH):
-    raise FileNotFoundError("❌ cardio_model.pkl not found")
+    raise FileNotFoundError(f"❌ {MODEL_PATH} not found")
 
 artifact = joblib.load(MODEL_PATH)
 
