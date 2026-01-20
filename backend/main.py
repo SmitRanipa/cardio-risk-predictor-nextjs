@@ -13,13 +13,14 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",                     
-        "https://cardio-risk-predictor-nextjs.vercel.app/",        
+        "http://localhost:3000",
+        "https://cardio-risk-predictor-nextjs.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 @app.get("/")
