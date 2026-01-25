@@ -2,7 +2,7 @@ import joblib
 import pandas as pd
 import os
 
-# ✅ Use absolute path to ensure it works in production
+# Use absolute path for works in production
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "cardio_model.pkl")
 
