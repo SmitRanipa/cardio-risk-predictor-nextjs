@@ -21,8 +21,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-
 @app.get("/")
 def root():
     return {"status": "Cardio API is running"}
